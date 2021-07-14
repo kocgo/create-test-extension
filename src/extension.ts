@@ -1,4 +1,6 @@
 import * as vscode from "vscode";
+import { createAndOpenFile } from "./compositions";
+import { createFile } from "./functions";
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -26,7 +28,14 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
 
-  context.subscriptions.push(disposable, contextItem);
+  let createFileInContextMenu = vscode.commands.registerCommand(
+    "extension.createAndOpenFile",
+    () => {
+      createFile("hello.js", "hey");
+    }
+  );
+
+  context.subscriptions.push(disposable, contextItem, createFileInContextMenu);
 }
 
 // this method is called when your extension is deactivated
