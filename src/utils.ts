@@ -9,6 +9,9 @@ export function pipe(...fns: ((...args: any[]) => any)[]) {
   };
 }
 
-export function compose(...fns: ((...args: any[]) => any)[]) {
-  return pipe(...fns.reverse()); // Just reverse the order of functions
-}
+export const compose = (...fns: any) =>
+  fns.reduceRight(
+    (f: any, g: any) =>
+      (...args: any) =>
+        g(f(...args))
+  );

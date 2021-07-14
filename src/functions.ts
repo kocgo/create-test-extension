@@ -36,19 +36,14 @@ export const createFile = (filename: string, data: string) => {
   return filename;
 };
 
-export const getFilePath = (fileName: string) => {
+export const getFilePath = (filename: string) => {
   if (vscode.workspace.workspaceFolders === undefined) {
     return;
   }
 
-  console.log(
-    "debug!!!",
-    vscode.workspace?.workspaceFolders?.[0].uri.path,
-    fileName
-  );
   const filePath = path.join(
     vscode.workspace?.workspaceFolders?.[0].uri.path,
-    fileName
+    filename
   );
 
   return vscode.Uri.file(filePath);

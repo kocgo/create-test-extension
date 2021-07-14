@@ -31,7 +31,7 @@ export function activate(context: vscode.ExtensionContext) {
   let createFileInContextMenu = vscode.commands.registerCommand(
     "extension.createAndOpenFile",
     () => {
-      createFile("hello.js", "hey");
+      createAndOpenFile("hello.js", "hey");
     }
   );
 
