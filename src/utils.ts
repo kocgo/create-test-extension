@@ -15,3 +15,11 @@ export const compose = (...fns: any) =>
       (...args: any) =>
         g(f(...args))
   );
+
+export const composeAsync =
+  (...functions: any[]) =>
+  (input?: any) =>
+    functions.reduceRight(
+      (chain, func) => chain.then(func),
+      Promise.resolve(input)
+    );

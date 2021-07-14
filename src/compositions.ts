@@ -1,4 +1,16 @@
-import { createFile, getFilePath, openFile } from "./functions";
-import { compose } from "./utils";
+import {
+  createEmptyFile,
+  openFileTab,
+  injectTestSnippet,
+  addExtensionToFilePath,
+  createComponentFileInterface,
+} from "./functions";
+import { composeAsync } from "./utils";
 
-export const createAndOpenFile = compose(openFile, getFilePath, createFile);
+export const createAndOpenEmptyFile = composeAsync(
+  injectTestSnippet,
+  openFileTab,
+  createEmptyFile,
+  addExtensionToFilePath(".test.tsx"),
+  createComponentFileInterface
+);
