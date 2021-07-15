@@ -11,15 +11,14 @@
   ],
   "activationEvents": [
     "onCommand:extension.helloWorld",
-    "onCommand:extension.contextItem",
-    "onCommand:extension.createAndOpenFile"
+    "onCommand:extension.createTestFile"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "menus": {
       "editor/context": [
         {
-          "command": "extension.contextItem"
+          "command": "extension.createTestFile"
         }
       ]
     },
@@ -29,12 +28,8 @@
         "title": "Hello World"
       },
       {
-        "command": "extension.contextItem",
-        "title": "contextItem"
-      },
-      {
-        "command": "extension.createAndOpenFile",
-        "title": "createAndOpenFile"
+        "command": "extension.createTestFile",
+        "title": "Create Test File"
       }
     ]
   },

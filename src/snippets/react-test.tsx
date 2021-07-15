@@ -9,7 +9,6 @@ import { ComponentName} from "./ComponentName;
 
 afterEach(cleanup);
 
-
 describe("<ComponentName />", () => {
   const { getByTestId, getByText } = render(<ComponentName/>);
 

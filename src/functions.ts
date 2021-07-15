@@ -23,7 +23,6 @@ export const getSelection = () => {
 export const createComponentFileInterface = (
   componentName: string
 ): IComponentFile => {
-  console.log("selection", componentName);
   return {
     componentName,
     fileName: componentName,
@@ -42,7 +41,6 @@ export const addExtensionToFilePath = (extension: string) => {
 };
 
 export const createEmptyFile = (componentFile: IComponentFile) => {
-  console.log("received", componentFile);
   if (vscode.workspace.workspaceFolders === undefined) {
     return;
   }

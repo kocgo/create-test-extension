@@ -21,21 +21,25 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
 
-  let contextItem = vscode.commands.registerCommand(
-    "extension.contextItem",
-    () => {
-      vscode.window.showInformationMessage("Hello World from extension!");
-    }
-  );
+  // let contextItem = vscode.commands.registerCommand(
+  //   "extension.contextItem",
+  //   () => {
+  //     vscode.window.showInformationMessage("Hello World from extension!");
+  //   }
+  // );
 
   let createFileInContextMenu = vscode.commands.registerCommand(
-    "extension.createAndOpenFile",
+    "extension.createTestFile",
     () => {
       createAndOpenEmptyFile(getSelection());
     }
   );
 
-  context.subscriptions.push(disposable, contextItem, createFileInContextMenu);
+  context.subscriptions.push(
+    disposable,
+    //  contextItem,
+    createFileInContextMenu
+  );
 }
 
 // this method is called when your extension is deactivated
